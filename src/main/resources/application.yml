@@ -1,0 +1,36 @@
+server:
+  port: 9999
+spring:
+  datasource:
+    password: root
+    url: jdbc:mysql://mysql:3306/fullstack
+    username: test
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
+      base-path: /myactuator
+  endpoint:
+    shutdown:
+      enabled: true
+  info:
+    build:
+      enabled: true
+    git:
+      enabled: true
+    env:
+      enabled: true
+logging:
+  level:
+    com:
+      zensar:
+        springbootdemo: debug
